@@ -5,18 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductsController extends Model
+class Products extends Model
 {
     use HasFactory;
 
-    protected $table = 'carousel_items'; 
+    protected $table = 'products'; 
 
-    protected $primaryKey = 'carousel_item_id';
+    protected $primaryKey = 'product_code';
 
     protected $fillable = [
-        'carousel_name',
-        'image_path',
+        'name',
         'description',
+        'store_price',
+        'retail_price',
+        'quantity',
         'user_id',
     ];
 }

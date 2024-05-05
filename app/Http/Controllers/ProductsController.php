@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 
-class Products extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        {
+            $products = Products::all();
+            return view('dashboard', compact('products'));
+        }
     }
 
     /**
