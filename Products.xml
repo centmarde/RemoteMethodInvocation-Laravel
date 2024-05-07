@@ -1,0 +1,7 @@
+<Products>
+    <Product name="Laptop" productCode="2" description="Lenovo Laptop" retailPrice="25000.00" storePrice="20000.00" quantity="5"/>
+    <Product name="Smartphone" productCode="35" description="Samsung Smartphone" retailPrice="12000.00" storePrice="10000.00" quantity="10"/>
+    <Product name="dddd" productCode="90" description="Apple Tablet" retailPrice="18000.00" storePrice="15000.00" quantity="8"/>
+    <Product name="awasd" productCode="5421" description="Fitbit Smartwatch" retailPrice="5000.00" storePrice="4000.00" quantity="15"/>
+    <Product name="awadsasd" productCode="865" description="Sonya Headphones" retailPrice="3000.00" storePrice="2500.00" quantity="20"/>
+</Products>
