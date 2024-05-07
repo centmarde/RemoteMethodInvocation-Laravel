@@ -1,0 +1,79 @@
+p{
+    color: #ffffff;
+}
+
+#header {
+    position: relative;
+    font-family: 'Sedan SC', serif;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(30, end) 1; /* Only typing animation without erasing */
+}
+
+/* Pseudo-element to represent the typing cursor */
+#header::after {
+    content: '|';
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: blink-caret 1s infinite;
+}
+
+/* Keyframes for the typing animation */
+@keyframes typing {
+    0% {
+        width: 0; 
+        content: ''; 
+    }
+    50% {
+        width: 100%; 
+    }
+}
+
+/* Keyframes for blinking the cursor */
+@keyframes blink-caret {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+#indexbody {
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  }
+
+  .custom-shape-divider-top-1715081876 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1715081876 svg {
+    position: relative;
+    display: block;
+    width: calc(123% + 1.3px);
+    height: 242px;
+}
+
+.custom-shape-divider-top-1715081876 .shape-fill {
+    fill: #ffffff;
+}
+
+#title{
+    color: #ffffff;
+   font-size: 80px;
+}
+
+#svg{
+    position: relative;
+    right: 140px;
+}
+
+#title {
+    display: none; /* Hide the element initially */
+  }
