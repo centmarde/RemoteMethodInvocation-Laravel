@@ -8,23 +8,21 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Product Code</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Store Price</th>
-                    <th>Retail Price</th>
-                    <th>Quantity</th>
+                    <th>Id</th>
+                    <th>FullName</th>
+                    <th>Program</th>
+                    <th>Course</th>
+                    
                 </tr>
             </thead>
             <tbody>
-                @foreach ($products as $products)
+                @foreach ($students as $students)
                     <tr>
-                        <td>{{ $products->product_code }}</td>
-                        <td>{{ $products->name }}</td>
-                        <td>{{ $products->description }}</td>
-                        <td>{{ $products->store_price }}</td>
-                        <td>{{ $products->retail_price }}</td>
-                        <td>{{ $products->quantity }}</td>
+                        <td>{{ $students->id }}</td>
+                        <td>{{ $students->fullname }}</td>
+                        <td>{{ $students->program }}</td>
+                        <td>{{ $students->course }}</td>
+                    
                     </tr>
                 @endforeach
             </tbody>

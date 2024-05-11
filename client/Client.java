@@ -17,15 +17,15 @@ public class Client {
             Registry registry = LocateRegistry.getRegistry("127.0.0.1", 9100);
 
           
-            CartInterface cart = (CartInterface) registry.lookup("cart");
+            EnrollmentInterface Enrollment = (EnrollmentInterface) registry.lookup("Enrollment");
 
             Scanner scanner = new Scanner(System.in);
 
             int choice;
             do {
-                System.out.println("\n1. View Products");
-                System.out.println("2. Add Product to Cart");
-                System.out.println("3. View All Products in Cart");  
+                System.out.println("\n1. View Students");
+                System.out.println("2. Add Students to Queue");
+                System.out.println("3. View All Students in Queue");  
                 System.out.println("4. Exit");
                 System.out.print("Enter your choice: ");
                 choice = scanner.nextInt();
@@ -33,28 +33,28 @@ public class Client {
                 switch (choice) {
                     case 1:
                         
-                        System.out.println("\nAvailable Products:");
-                        String[] productNames = registry.list();
-                        for (String productName : productNames) {
-                            if (!productName.equals("cart")) {
-                                ProductInterface product = (ProductInterface) registry.lookup(productName);
-                                System.out.println("Name: " + product.getName() + ", Retail Price: " + product.getRetailPrice());
+                        System.out.println("\nAvailable Students:");
+                        String[] studentNames = registry.list();
+                        for (String studentName : studentNames) {
+                            if (!studentName.equals("queue")) {
+                                StudentInterface student = (StudentInterface) registry.lookup(studentName);
+                                System.out.println("Fullname: " + student.getFullname() + ", Course: " + student.getCourse());
                             }
                         }
                         break;
 
                     case 2:
                         
-                        System.out.print("Enter the name of the product to add: ");
-                        String productNameToAdd = scanner.next();
-                        ProductInterface productToAdd = (ProductInterface) registry.lookup(productNameToAdd);
-                        cart.addProduct(productToAdd.getName());
-                        System.out.println(productToAdd.getName() + " added to cart.");
+                        System.out.print("Enter the name of the student to add: ");
+                        String studentNameToAdd = scanner.next();
+                        StudentInterface studentToAdd = (StudentInterface) registry.lookup(studentNameToAdd);
+                        Enrollment.addStudent(studentToAdd.getFullname());
+                        System.out.println(studentToAdd.getFullname() + " added to Queue.");
                         break;
 
                     case 3:
                         
-                        System.out.println(cart.viewAllProductsinCart());
+                        System.out.println(Enrollment.viewAllStudentsinQueue());
                         break;
 
                     case 4:

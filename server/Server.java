@@ -32,44 +32,43 @@ public class Server {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             System.setProperty("java.rmi.server.hostname", "127.0.0.1");
+           
             System.out.println("Server has been started...");
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse("C:/laragon/www/RMILaravel/Products.xml");
+            Document document = builder.parse("C:/laragon/www/RMILaravel/Students.xml");
             document.getDocumentElement().normalize();
 
-            NodeList productList = document.getElementsByTagName("Product");
-            for (int i = 0; i < productList.getLength(); i++) {
-                Node productNode = productList.item(i);
+            NodeList studentList = document.getElementsByTagName("Students");
+            for (int i = 0; i < studentList.getLength(); i++) {
+                Node studentNode = studentList.item(i);
 
-                // Parse product details from XML
-                if (productNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element productElement = (Element) productNode;
-                    int productCode = Integer.parseInt(productElement.getAttribute("productCode"));
-                    String name = productElement.getAttribute("name");
-                    String description = productElement.getAttribute("description");
-                    double retailPrice = Double.parseDouble(productElement.getAttribute("retailPrice"));
-                    double storePrice = Double.parseDouble(productElement.getAttribute("storePrice"));
-                    int quantity = Integer.parseInt(productElement.getAttribute("quantity"));
+                // Parse student details from XML
+                if (studentNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element studentElement = (Element) studentNode;
+                    String student_id =studentElement.getAttribute("student_id");
+                    String fullname = studentElement.getAttribute("fullname");
+                    String program = studentElement.getAttribute("program");
+                    String course = studentElement.getAttribute("course");
+                 
 
-                    // Insert product details into the database
-                    String insertQuery = "INSERT INTO products (product_code, name, description, retail_price,  store_price, quantity) VALUES (?, ?, ?, ?, ?, ?)";
+                    // Insert student details into the database
+                    String insertQuery = "INSERT INTO students (student_id, fullname, program, course) VALUES (?, ?, ?, ?)";
                     PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
-                    preparedStatement.setInt(1, productCode);
-                    preparedStatement.setString(2, name);
-                    preparedStatement.setString(3, description);
-                    preparedStatement.setDouble(4, retailPrice);
-                    preparedStatement.setDouble(5, storePrice);
-                    preparedStatement.setInt(6, quantity);
+                    preparedStatement.setString(1, student_id);
+                    preparedStatement.setString(2, fullname);
+                    preparedStatement.setString(3, program);
+                    preparedStatement.setString(4, course);
+                 
 
-                    System.out.println("Inserted rows into the products table");
+                    System.out.println("Inserted rows into the students table");
 
                     int rowsAffected = preparedStatement.executeUpdate();
                     if (rowsAffected > 0) {
-                        System.out.println("Inserted product: " + name);
+                        System.out.println("Inserted Students: " + fullname);
                     } else {
-                        System.out.println("Failed to insert product: " + name);
+                        System.out.println("Failed to insert Students: " + fullname);
                     }
 
                     preparedStatement.close();
@@ -77,10 +76,10 @@ public class Server {
             }
 
             // Exporting and binding of Objects has been completed
-            Cart serve = new Cart();
-            CartInterface cart = (CartInterface) UnicastRemoteObject.exportObject(serve, 0);
+            Enrollment serve = new Enrollment();
+            EnrollmentInterface Enrollment = (EnrollmentInterface) UnicastRemoteObject.exportObject(serve, 0);
             Registry registry = LocateRegistry.getRegistry("127.0.0.1", 9100);
-            registry.rebind("cart", cart);
+            registry.rebind("Enrollment", Enrollment);
 
             System.out.println("Exporting and binding of Objects has been completed...");
         } catch (ParserConfigurationException | SAXException | IOException e) {

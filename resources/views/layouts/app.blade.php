@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container">
             <div class="navbar-brand">
-                <h1 class="text-center" id="header">Products Dashboard.</h1>
+                <h1 class="text-center" id="header">Students Dashboard.</h1>
 
             </div>
         </div>
