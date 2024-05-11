@@ -18,7 +18,7 @@
             <tbody>
                 @foreach ($students as $students)
                     <tr>
-                        <td>{{ $students->id }}</td>
+                        <td>{{ $students->student_id }}</td>
                         <td>{{ $students->fullname }}</td>
                         <td>{{ $students->program }}</td>
                         <td>{{ $students->course }}</td>

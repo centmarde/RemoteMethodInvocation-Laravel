@@ -1,5 +1,5 @@
 <Students>
-    <Student id="221-5642" fullname="James Espana" program="IT-106" course="BSIT" />
-    <Student id="220-5562" fullname="Christ Gabales" program="CSC-104" course="BSCS" />
-    <Student id="111-5624" fullname="Eisan Atamosa" program="IT-12" course="BSIS" />
+    <Student student_id="221-5642" fullname="James Espana" program="IT-106" course="BSIT" />
+    <Student student_id="220-5562" fullname="Christ Gabales" program="CSC-104" course="BSCS" />
+    <Student student_id="111-5624" fullname="Eisan Atamosa" program="IT-12" course="BSIS" />
 </Students>

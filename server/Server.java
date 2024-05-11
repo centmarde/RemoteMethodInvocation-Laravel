@@ -40,7 +40,7 @@ public class Server {
             Document document = builder.parse("C:/laragon/www/RMILaravel/Students.xml");
             document.getDocumentElement().normalize();
 
-            NodeList studentList = document.getElementsByTagName("Students");
+            NodeList studentList = document.getElementsByTagName("Student");
             for (int i = 0; i < studentList.getLength(); i++) {
                 Node studentNode = studentList.item(i);
 
