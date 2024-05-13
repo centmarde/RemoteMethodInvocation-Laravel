@@ -1,22 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\courses_model;
 use App\Models\Students;
 use Illuminate\Http\Request;
 
-class StudentsController extends Controller
+class Courses_controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $students = Students::all();
         $courses = courses_model::all();
-        return view('dashboard', compact('students', 'courses'));
+        return view('dashboard', compact('courses'));
     }
 
+ /*    public function viewData()
+    {
+        $courses = courses_model::all();
+        $students = Students::all();
+
+        return view('dashboard', ['courses' => $courses, 'students' => $students]);
+    } */
+    
     /**
      * Show the form for creating a new resource.
      */

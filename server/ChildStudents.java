@@ -7,8 +7,8 @@ public class ChildStudents extends ParentStudent implements StudentInterface {
         super();
     }
 
-    public ChildStudents(int newStudentId, String newFullname, String newProgram,
-                       String newCourse) throws RemoteException {
-        super(newStudentId, newFullname, newProgram, newCourse);
+    public ChildStudents(String newStudentId, String newName, String newAge,String newAddress,
+    String newContactNumber) throws RemoteException {
+        super(newStudentId, newName, newAge, newAddress,newContactNumber);
     }
 }

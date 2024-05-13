@@ -3,11 +3,11 @@ import java.rmi.RemoteException;
 
 public interface StudentInterface extends Remote {
     // Lets us define API
-    public int getId() throws RemoteException;  
-    public String getFullname() throws RemoteException;
-    public String getProgram() throws RemoteException;
-    public String getCourse() throws RemoteException;  
-    
+    public String getStudentId() throws RemoteException;  
+    public String getName() throws RemoteException;
+    public String getAge() throws RemoteException;
+    public String getAddress() throws RemoteException;  
+    public String getContactNumber() throws RemoteException;  
 
 }
 

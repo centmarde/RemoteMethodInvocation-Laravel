@@ -1,41 +1,48 @@
 
 public class GrandParentStudent {
-    protected int student_id;
-    protected String fullname;
-    protected String program;
-    protected String course;
+    protected String student_id;
+    protected String name;
+    protected String age;
+    protected String address;
+    protected String contact_number;
    
 
     public GrandParentStudent() {
-        this.student_id = -1; // Default student code
-        this.fullname = "N/A";
-        this.program = "N/A";
-        this.course = "N/A";
+        this.student_id = "N/A"; // Default student code
+        this.name = "N/A";
+        this.age = "N/A";
+        this.address = "N/A";
+        this.contact_number = "N/A";
     }
 
-    public GrandParentStudent(int newStudentId, String newFullname, String newProgram,
-                              String newCourse) {
+    public GrandParentStudent(String newStudentId, String newName, String newAge,String newAddress,
+                              String newContactNumber) {
         this.student_id = newStudentId;
-        this.fullname = newFullname;
-        this.program = newProgram;
-        this.course = newCourse;
+        this.name = newName;
+        this.age = newAge;
+        this.address = newAddress;
+        this.address = newAddress;
+        this.contact_number = newContactNumber;
       
     }
 
-    public int getStudentId() {
+    public String getStudentId() {
         return this.student_id;
     }
 
-    public String getFullname() {
-        return this.fullname;
+    public String getName() {
+        return this.name;
     }
 
-    public String getProgram() {
-        return this.program;
+    public String getAge() {
+        return this.age;
     }
 
-    public String getCourse() {
-        return this.course;
+    public String getAddress() {
+        return this.address;
+    }
+    public String getContactNumber() {
+        return this.contact_number;
     }
 
 }
