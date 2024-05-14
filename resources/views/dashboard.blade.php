@@ -40,7 +40,7 @@
             <thead>
                 <tr>
                     <th>Courese Id</th>
-                    <th>Student Id</th>
+                    
                     <th>Course Title</th>
                     <th>Course Description</th>
                     
@@ -50,7 +50,7 @@
                 @foreach ($courses as $courses)
                     <tr>
                         <td>{{ $courses->course_id }}</td>
-                        <td>{{ $courses->student_id }}</td>
+                       
                         <td>{{ $courses->course_title }}</td>
                         <td>{{ $courses->course_description }}</td>
                     

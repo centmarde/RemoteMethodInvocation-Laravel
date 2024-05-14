@@ -11,7 +11,7 @@ public class Course implements Serializable {
         this.courseDescription = courseDescription;
     }
 
-    // Getters and toString method
+   
     public String getCourseId() {
         return courseId;
     }

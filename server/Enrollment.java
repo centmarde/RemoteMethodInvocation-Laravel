@@ -66,12 +66,20 @@ public class Enrollment extends UnicastRemoteObject implements EnrollmentInterfa
                 Node courseNode = courseList.item(i);
                 if (courseNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element courseElement = (Element) courseNode;
-                    String course_id = courseElement.getAttribute("course_id");
-                    String title = courseElement.getAttribute("course_title");
-                    String description = courseElement.getAttribute("course_description");
-                    details.append("Parsed course details: ").append(course_id).append(", ").append(title).append(", ").append(description).append("\n");
+                    String course_id = courseElement.getAttribute("course_id").trim();
+                    String title = courseElement.getAttribute("course_title").trim();
+                    String description = courseElement.getAttribute("course_description").trim();
+            
+                   
+                    if (course_id.isEmpty() || title.isEmpty() || description.isEmpty()) {
+                        System.err.println("Invalid course details for course at index " + i);
+                        
+                    } else {
+                        details.append("Parsed course details: ").append(course_id).append(", ").append(title).append(", ").append(description).append("\n");
+                    }
                 }
             }
+            
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
