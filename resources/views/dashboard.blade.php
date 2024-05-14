@@ -6,28 +6,58 @@
     <div class="container">
        
         <table class="table">
+        <h2>List of all Students</h2>
             <thead>
                 <tr>
-                    <th>Product Code</th>
+                    <th>Id</th>
                     <th>Name</th>
-                    <th>Description</th>
-                    <th>Store Price</th>
-                    <th>Retail Price</th>
-                    <th>Quantity</th>
+                    <th>Address</th>
+                    <th>Contact Number</th>
+                    
                 </tr>
             </thead>
             <tbody>
-                @foreach ($products as $products)
+                @foreach ($students as $students)
                     <tr>
-                        <td>{{ $products->product_code }}</td>
-                        <td>{{ $products->name }}</td>
-                        <td>{{ $products->description }}</td>
-                        <td>{{ $products->store_price }}</td>
-                        <td>{{ $products->retail_price }}</td>
-                        <td>{{ $products->quantity }}</td>
+                        <td>{{ $students->student_id }}</td>
+                        <td>{{ $students->name }}</td>
+                        <td>{{ $students->address }}</td>
+                        <td>{{ $students->contact_number }}</td>
+                    
                     </tr>
                 @endforeach
             </tbody>
+           
         </table>
     </div>
-@endsection
+    @endsection
+
+    @section('content2')
+     <div class="container">
+       
+        <table class="table">
+        <h2>Courses Offered</h2>
+            <thead>
+                <tr>
+                    <th>Courese Id</th>
+                    <th>Student Id</th>
+                    <th>Course Title</th>
+                    <th>Course Description</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($courses as $courses)
+                    <tr>
+                        <td>{{ $courses->course_id }}</td>
+                        <td>{{ $courses->student_id }}</td>
+                        <td>{{ $courses->course_title }}</td>
+                        <td>{{ $courses->course_description }}</td>
+                    
+                    </tr>
+                @endforeach
+            </tbody>
+           
+        </table>
+    </div>
+    @endsection

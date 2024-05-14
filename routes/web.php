@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\DualContentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\StudentsController;
+use App\Models\Students;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +21,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [ProductsController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard', [ProductsController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [StudentsController::class, 'index'])->name('dashboard');

@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container">
             <div class="navbar-brand">
-                <h1 class="text-center" id="header">Products Dashboard.</h1>
+                <h1 class="text-center" id="header">Students Dashboard.</h1>
 
             </div>
         </div>
@@ -34,8 +34,15 @@
         <div class="row">
             <div class="col-8">
                 <div class="card" style="width: auto;">
+               
                     <div class="card-body">
                         @yield('content')
+                    </div>
+                </div>
+                <div class="card mt-3" style="width: auto;">
+               
+                    <div class="card-body">
+                        @yield('content2')
                     </div>
                 </div>
             </div>
