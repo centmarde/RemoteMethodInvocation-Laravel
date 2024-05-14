@@ -70,10 +70,10 @@ public class Enrollment extends UnicastRemoteObject implements EnrollmentInterfa
                     String title = courseElement.getAttribute("course_title").trim();
                     String description = courseElement.getAttribute("course_description").trim();
             
-                    // Check if any of the attributes are empty
+                   
                     if (course_id.isEmpty() || title.isEmpty() || description.isEmpty()) {
                         System.err.println("Invalid course details for course at index " + i);
-                        // Optionally, you can skip processing this course or handle the error as needed
+                        
                     } else {
                         details.append("Parsed course details: ").append(course_id).append(", ").append(title).append(", ").append(description).append("\n");
                     }
