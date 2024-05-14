@@ -18,33 +18,32 @@ public class Enrollment extends UnicastRemoteObject implements EnrollmentInterfa
 
     @Override
     public void addStudent(String student) throws RemoteException {
-        // Implementation here
+        
     }
 
     @Override
     public String viewAllStudentsinQueue() throws RemoteException {
-        // Implementation here
+        
         return null;
     }
 
     @Override
     public void insertStudent(String student_id, String name, String age, String address, String contact_number) throws RemoteException {
-        // Implementation here
+        
     }
 
     @Override
     public String getParsedDetails() throws RemoteException {
         StringBuilder details = new StringBuilder();
-
+    
         try {
-            // Parsing Students.xml
+            
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document studentDocument = builder.parse("C:/laragon/www/RMILaravel/Students.xml");
             studentDocument.getDocumentElement().normalize();
             NodeList studentList = studentDocument.getElementsByTagName("Student");
-
-            details.append("Parsed student details:\n");
+    
             for (int i = 0; i < studentList.getLength(); i++) {
                 Node studentNode = studentList.item(i);
                 if (studentNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -54,16 +53,15 @@ public class Enrollment extends UnicastRemoteObject implements EnrollmentInterfa
                     String age = studentElement.getAttribute("age");
                     String address = studentElement.getAttribute("address");
                     String contact_number = studentElement.getAttribute("contact_number");
-                    details.append(student_id).append(", ").append(name).append(", ").append(age).append(", ").append(address).append(", ").append(contact_number).append("\n");
+                    details.append("Parsed student details: ").append(student_id).append(", ").append(name).append(", ").append(age).append(", ").append(address).append(", ").append(contact_number).append("\n");
                 }
             }
-
-            // Parsing Courses.xml
+    
+            
             Document courseDocument = builder.parse("C:/laragon/www/RMILaravel/Courses.xml");
             courseDocument.getDocumentElement().normalize();
             NodeList courseList = courseDocument.getElementsByTagName("Course");
-
-            details.append("\nParsed course details:\n");
+    
             for (int i = 0; i < courseList.getLength(); i++) {
                 Node courseNode = courseList.item(i);
                 if (courseNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -71,13 +69,14 @@ public class Enrollment extends UnicastRemoteObject implements EnrollmentInterfa
                     String course_id = courseElement.getAttribute("course_id");
                     String title = courseElement.getAttribute("course_title");
                     String description = courseElement.getAttribute("course_description");
-                    details.append(course_id).append(", ").append(title).append(", ").append(description).append("\n");
+                    details.append("Parsed course details: ").append(course_id).append(", ").append(title).append(", ").append(description).append("\n");
                 }
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-
+    
         return details.toString();
     }
+    
 }
