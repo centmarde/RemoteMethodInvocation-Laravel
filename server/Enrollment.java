@@ -1,70 +1,83 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import java.io.IOException;
 
-public class Enrollment implements EnrollmentInterface {
-    private String addedStudent1;
-    private String addedStudent2;
+public class Enrollment extends UnicastRemoteObject implements EnrollmentInterface {
 
-    public Enrollment() {
-        this.addedStudent1 = "none";
-        this.addedStudent2 = "none";
+    public Enrollment() throws RemoteException {
+        super();
     }
 
-    public void addStudent(String student) {
-        if (addedStudent1.equals("none")) {
-            System.out.println("Adding student 1.");
-            addedStudent1 = student;
-        } else if (addedStudent2.equals("none")) {
-            System.out.println("Adding student 2.");
-            addedStudent2 = student;
-        } else {
-            System.out.println("Queue of Enrollment is full. Cannot add more students.");
-        }
+    @Override
+    public void addStudent(String student) throws RemoteException {
+        // Implementation here
     }
 
-    public void insertStudent(String student_id, String name, String age, String address,String contact_number) {
+    @Override
+    public String viewAllStudentsinQueue() throws RemoteException {
+        // Implementation here
+        return null;
+    }
+
+    @Override
+    public void insertStudent(String student_id, String name, String age, String address, String contact_number) throws RemoteException {
+        // Implementation here
+    }
+
+    @Override
+    public String getParsedDetails() throws RemoteException {
+        StringBuilder details = new StringBuilder();
+
         try {
-            // Establish database connection
-            String url = "jdbc:mysql://localhost:3306/rmilaravel";
-            String username = "root";
-            String password = "";
-            Connection connection = DriverManager.getConnection(url, username, password);
+            // Parsing Students.xml
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document studentDocument = builder.parse("C:/laragon/www/RMILaravel/Students.xml");
+            studentDocument.getDocumentElement().normalize();
+            NodeList studentList = studentDocument.getElementsByTagName("Student");
 
-            // Insert student details into the database
-            String insertQuery = "INSERT INTO students (student_id, age, address, contact_number) VALUES (?, ?, ?, ?,?)";
-            PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
-            preparedStatement.setString(1, student_id);
-            preparedStatement.setString(2, name);
-            preparedStatement.setString(3, age);
-            preparedStatement.setString(4, address);
-            preparedStatement.setString(5, contact_number);
-
-            int rowsAffected = preparedStatement.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Student inserted successfully: " + name);
-            } else {
-                System.out.println("Failed to insert student: " + name);
+            details.append("Parsed student details:\n");
+            for (int i = 0; i < studentList.getLength(); i++) {
+                Node studentNode = studentList.item(i);
+                if (studentNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element studentElement = (Element) studentNode;
+                    String student_id = studentElement.getAttribute("student_id");
+                    String name = studentElement.getAttribute("name");
+                    String age = studentElement.getAttribute("age");
+                    String address = studentElement.getAttribute("address");
+                    String contact_number = studentElement.getAttribute("contact_number");
+                    details.append(student_id).append(", ").append(name).append(", ").append(age).append(", ").append(address).append(", ").append(contact_number).append("\n");
+                }
             }
 
-            preparedStatement.close();
-            connection.close();
-        } catch (SQLException e) {
-            System.err.println("SQL Error: " + e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error inserting student: " + e);
-        }
-    }
+            // Parsing Courses.xml
+            Document courseDocument = builder.parse("C:/laragon/www/RMILaravel/Courses.xml");
+            courseDocument.getDocumentElement().normalize();
+            NodeList courseList = courseDocument.getElementsByTagName("Course");
 
-    public String viewAllStudentsinQueue() {
-        StringBuilder students = new StringBuilder("\nAll Students in Queue: ");
-        if (!addedStudent1.equals("none")) {
-            students.append(addedStudent1).append(", ");
+            details.append("\nParsed course details:\n");
+            for (int i = 0; i < courseList.getLength(); i++) {
+                Node courseNode = courseList.item(i);
+                if (courseNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element courseElement = (Element) courseNode;
+                    String course_id = courseElement.getAttribute("course_id");
+                    String title = courseElement.getAttribute("course_title");
+                    String description = courseElement.getAttribute("course_description");
+                    details.append(course_id).append(", ").append(title).append(", ").append(description).append("\n");
+                }
+            }
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
         }
-        if (!addedStudent2.equals("none")) {
-            students.append(addedStudent2).append(", ");
-        }
-        return students.length() > 0 ? students.substring(0, students.length() - 2) : "No Students in Queue.";
+
+        return details.toString();
     }
 }

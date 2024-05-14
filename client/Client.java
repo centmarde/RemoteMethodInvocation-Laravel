@@ -1,29 +1,26 @@
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.rmi.RemoteException;
-import java.rmi.NotBoundException;
-import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) {
         try {
-
-           
-            
+            // Get the registry
             Registry registry = LocateRegistry.getRegistry("127.0.0.1", 9100);
 
-          
-            EnrollmentInterface Enrollment = (EnrollmentInterface) registry.lookup("EnrollmentBinder");
+            // Look up the remote object by name
+            EnrollmentInterface enrollment = (EnrollmentInterface) registry.lookup("EnrollmentBinder");
 
-        
-           
+            // Call remote method to fetch parsed details
+            String parsedDetails = enrollment.getParsedDetails();
 
-        } catch (RemoteException re) {
-            System.out.println("RMI communication error: " + re);
-        } catch (NotBoundException nbe) {
-            System.out.println("Object not bound in RMI Registry: " + nbe);
+            // Display fetched parsed details
+            System.out.println(parsedDetails);
+
+        } catch (java.rmi.NotBoundException e) {
+            System.err.println("The name 'EnrollmentBinder' is not currently bound in the registry.");
         } catch (Exception e) {
-            System.out.println("Client side error: " + e);
+            System.err.println("Client exception: " + e.toString());
+            e.printStackTrace();
         }
     }
 }
