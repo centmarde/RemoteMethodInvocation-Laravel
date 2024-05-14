@@ -76,7 +76,7 @@ public class Client {
                             System.out.println("Inserted " + rowsInserted + " row(s) for course: " + courseDetails[0]);
                         }
                     } else {
-                        System.err.println("Invalid course details: " + detail);
+                        System.err.println("Invalid course details: " + courseDetails[0]);
                     }
                 }
             }

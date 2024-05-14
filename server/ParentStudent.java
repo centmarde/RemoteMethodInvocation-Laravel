@@ -9,9 +9,7 @@ public class ParentStudent extends GrandParentStudent {
         super(newStudentId, newName, newAge, newAddress, newContactNumber);
     }
 
-  /*   public void changeStudentName(String newFullname) {
-        super.changeStudentName(newFullname);
-    } */
+ 
 
     public void viewStudents() {
         System.out.println("Student Id: " + this.student_id);
