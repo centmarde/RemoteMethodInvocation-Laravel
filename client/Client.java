@@ -10,16 +10,15 @@ public class Client {
 
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
-
       Connection connection = DriverManager.getConnection(url, username, password);
 
       // Parse and insert students
       StudentParser studentParser = new StudentParser();
-      studentParser.parseAndInsert(connection, "C:/laragon/www/RMILaravel/Students.xml");
+      studentParser.parseAndInsertStudents(connection, "C:/laragon/www/RMILaravel/Students.xml");
 
       // Parse and insert courses
       CourseParser courseParser = new CourseParser();
-      courseParser.parseAndInsert(connection, "C:/laragon/www/RMILaravel/Courses.xml");
+      courseParser.parseAndInsertCourses(connection, "C:/laragon/www/RMILaravel/Courses.xml");
 
       connection.close();
     } catch (Exception e) {

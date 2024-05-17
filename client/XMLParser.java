@@ -1,10 +1,8 @@
-import java.sql.Connection;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 
-public abstract class XMLParser {
+public class XMLParser {
 
   protected Document parseXML(String filePath) {
     try {
@@ -18,6 +16,4 @@ public abstract class XMLParser {
     }
     return null;
   }
-
-  public abstract void parseAndInsert(Connection connection, String filePath);
 }
