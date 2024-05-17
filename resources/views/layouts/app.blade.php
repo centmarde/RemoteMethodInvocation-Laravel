@@ -52,12 +52,40 @@
                         <div class="d-flex justify-content-center">
 
                             <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
-                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('kaguya.jpg') }}" width="100%" height="200rem"></div>
+                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('marde.jpg') }}" width="100%" height="200rem"></div>
 
                             </div>
 
                         </div>
                         <h4 class="text-center">Centmarde J. Campado</h4>
+                    </div>
+                </div>
+
+                <div class="card mt-3" style="width: auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+
+                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
+                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('christ.jpg') }}" width="100%" height="200rem"></div>
+
+                            </div>
+
+                        </div>
+                        <h4 class="text-center">Christ Gabales</h4>
+                    </div>
+                </div>
+
+                <div class="card mt-3" style="width: auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+
+                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
+                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('junkay.jpeg') }}" width="100%" height="200rem"></div>
+
+                            </div>
+
+                        </div>
+                        <h4 class="text-center">Jun Kyle Gulay</h4>
                     </div>
                 </div>
                 <div class="card mt-3" style="width: auto;">

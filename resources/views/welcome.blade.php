@@ -36,11 +36,16 @@
                 <a href="http://rmilaravel.test/dashboard" class=" mt-5 mx-5 d-flex justify-content-center btn btn-outline-light">Go to Dashboard</a>
                 <div class="d-flex">
                     <h5 class="ms-5 text-light mt-3">Links:</h5><a href="https://github.com/centmarde" target="blank">
-                        <i class="text-light ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
+            
+                    <i class="text-light ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
                     </a>
-                    <a href="https://web.facebook.com/centmarde.campado" target="blank">
-                        <i class="text-light ms-3 mt-2 fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    <a href="https://github.com/ccqg" target="blank">
+                        <i class="text-dark ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
                     </a>
+                    <a href="https://github.com/Kayel2" target="blank">
+                        <i class="text-danger ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
+                    </a>
+                   
 
 
                 </div>
