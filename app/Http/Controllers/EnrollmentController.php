@@ -1,24 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\courses_model;
-use App\Models\Students;
+
 use App\Models\Enrollment;
 use Illuminate\Http\Request;
 
-class StudentsController extends Controller
+class EnrollmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    
-    {   
-        $enrollment = Enrollment::all();
-        $students = Students::all();
-        $courses = courses_model::all();
-        return view('dashboard', compact('students', 'courses', 'enrollment'));
+    {
+        $enrollments = Enrollment::with('student')->get();
+        
+        return view('dashboard', compact('enrollments'));
     }
+    
 
     /**
      * Show the form for creating a new resource.

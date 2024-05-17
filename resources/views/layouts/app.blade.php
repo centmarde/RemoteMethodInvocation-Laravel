@@ -45,6 +45,13 @@
                         @yield('content2')
                     </div>
                 </div>
+
+                <div class="card mt-3" style="width: auto;">
+               
+               <div class="card-body">
+                   @yield('content3')
+               </div>
+           </div>
             </div>
             <div class="col-4">
                 <div class="card" style="width: auto;">

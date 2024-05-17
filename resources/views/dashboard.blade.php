@@ -61,3 +61,36 @@
         </table>
     </div>
     @endsection
+
+
+    @section('content3')
+     <div class="container">
+       
+        <table class="table">
+        <h2>Enroll Request</h2>
+            <thead>
+                <tr>
+                    <th>Course Id</th>
+                    <th>Student Id</th>
+                    <th>Name</th>
+                    <th>Title</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($enrollment as $enrollment)
+                    <tr>
+                        <td>{{ $enrollment->course->course_id }}</td>
+                        <td>{{ $enrollment->student->student_id }}</td>
+                        <td>{{ $enrollment->student->name }}</td>
+                        <td>{{ $enrollment->course->course_title }}</td>
+                       
+                        
+                    
+                    </tr>
+                @endforeach
+            </tbody>
+           
+        </table>
+    </div>
+    @endsection

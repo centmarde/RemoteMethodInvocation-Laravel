@@ -1,23 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Models\courses_model;
-use App\Models\Students;
-use App\Models\Enrollment;
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class StudentsController extends Controller
+class EnrollmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    
-    {   
-        $enrollment = Enrollment::all();
-        $students = Students::all();
-        $courses = courses_model::all();
-        return view('dashboard', compact('students', 'courses', 'enrollment'));
+    {
+        //
     }
 
     /**
