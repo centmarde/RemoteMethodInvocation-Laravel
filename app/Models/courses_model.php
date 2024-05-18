@@ -11,7 +11,9 @@ class courses_model extends Model
 
     protected $table = 'courses'; 
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'course_id';
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     protected $fillable = [
         'course_id',

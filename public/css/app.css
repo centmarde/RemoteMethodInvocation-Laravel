@@ -77,3 +77,11 @@ p{
 #title {
     display: none; /* Hide the element initially */
   }
+
+  #imageContainerMaster img {
+    transition: transform 0.3s ease;
+}
+
+#imageContainerMaster:hover img {
+    transform: scale(1.1);
+}

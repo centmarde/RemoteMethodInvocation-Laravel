@@ -12,9 +12,8 @@ class EnrollmentController extends Controller
     {
         // Validate the request data
         $validatedData = $request->validate([
-            'student_id' => 'required|integer|exists:students,id',
-            'course_id' => 'required|integer|exists:courses,id',
-            // Add more validation rules as necessary
+            'student_id' => 'required|string|exists:students,student_id',
+            'course_id' => 'required|string|exists:courses,course_id',
         ]);
 
         // Create a new enrollment
@@ -25,5 +24,17 @@ class EnrollmentController extends Controller
             'message' => 'Enrollment created successfully',
             'enrollment' => $enrollment,
         ], 201);
+    }
+
+    public function index()
+    {
+        return Enrollment::all();
+    }
+
+    public function destroy(string $id)
+    {
+       $carouselItem = Enrollment::findOrFail($id);
+       $carouselItem->delete();
+       return $carouselItem;
     }
 }

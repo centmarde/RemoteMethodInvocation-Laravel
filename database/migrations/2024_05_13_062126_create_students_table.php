@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id(); // Define 'id' as primary key
-            $table->string('student_id');
+            // Define 'id' as primary key
+            $table->string('student_id', 9)->primary();
             $table->timestamps();
             $table->string('name');
             $table->unsignedInteger('age'); // Use unsigned integer for 'age'

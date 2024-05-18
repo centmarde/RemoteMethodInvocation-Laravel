@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('enrollment', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('course_id');
-            $table->unsignedBigInteger('student_id');
+            $table->string('course_id');
+            $table->string('student_id');
             $table->timestamps();
             
             // Define foreign key constraints
-            $table->foreign('course_id')->references('id')->on('courses');
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('course_id')->references('course_id')->on('courses');
+            $table->foreign('student_id')->references('student_id')->on('students');
         });
         
     }
