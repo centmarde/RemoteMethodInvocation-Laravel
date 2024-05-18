@@ -67,7 +67,7 @@
      <div class="container">
        
         <table class="table">
-        <h2>Enroll Request</h2>
+        <h2>Already Enrolled</h2>
             <thead>
                 <tr>
                     <th>Course Id</th>
