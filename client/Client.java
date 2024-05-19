@@ -14,11 +14,11 @@ public class Client {
 
       // Parse and insert students
       StudentParser studentParser = new StudentParser();
-      studentParser.parseAndInsertStudents(connection, "C:/laragon/www/RMILaravel/Students.xml");
+      studentParser.parseAndInsertStudents(connection, "C:/laragon/www/RMILaravel/Storage/Students.xml");
 
       // Parse and insert courses
       CourseParser courseParser = new CourseParser();
-      courseParser.parseAndInsertCourses(connection, "C:/laragon/www/RMILaravel/Courses.xml");
+      courseParser.parseAndInsertCourses(connection, "C:/laragon/www/RMILaravel/Storage/Courses.xml");
 
       connection.close();
     } catch (Exception e) {

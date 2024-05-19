@@ -19,10 +19,8 @@ class StudentsController extends Controller
         $courses = courses_model::all();
         return view('dashboard', compact('students', 'courses', 'enrollment'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    
+   
     public function create()
     {
         //
@@ -33,7 +31,7 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
     }
 
     /**

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Students>
+    <Student student_id="221-05642" name="James Espana" age="21" contact_number="0963322541" address="Ampayon B.C"/>
+    <Student student_id="220-05562" name="Christ Gabales" age="24" contact_number="0963232541" address="Baan B.C"/>
+    <Student student_id="111-05624" name="Eisan Atamosa" age="45" contact_number="0956222541" address="Central B.C"/>
+<Student student_id="111-1562" name="Marde" age="21" contact_number="096346646" address="ANdaya B.C"/><Student student_id="121-1562" name="Marde" age="21" contact_number="096346646" address="ANdaya B.C"/><Student student_id="131-01482" name="questions" age="21" contact_number="096335695452" address="Central B.C"/></Students>

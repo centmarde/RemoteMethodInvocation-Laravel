@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
-<body class="antialiased" id="indexbody" >
+<body class="antialiased" id="indexbody">
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container">
             <div class="navbar-brand">
@@ -51,27 +51,60 @@
 
                     <div class="card-body">
                         @yield('content3' )
-                       
+
                     </div>
 
                 </div>
 
-                <br> 
+                <br>
                 <div class="card p-4" style="width: auto;">
-    <h3>Enroll a Student</h3>
-   <div class="container d-flex"> <div class="col mx-1"><div class="form-floating">
-        <textarea class="form-control" placeholder="Enter Course ID" id="courseId" style="background-color: #EEEEEE;"></textarea>
-        <label for="courseId">Course Id</label>
+                    <h3>Add a Student to a XML file.</h3>
+                    <div class="container">
+        <form id="student_form">
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input class="form-control" placeholder="Enter Student ID" name="student_id" id="student_id" style="background-color: #EEEEEE;">
+                            <label for="student_id">Student Id</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input class="form-control" placeholder="Enter Name" name="name" id="name" style="background-color: #EEEEEE;">
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating">
+                        <input class="form-control" placeholder="Enter Age" name="age" id="age" style="background-color: #EEEEEE;">
+                        <label for="age">Age</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input class="form-control" placeholder="Enter Contact Number" name="contact_number" id="contact_number" style="background-color: #EEEEEE;">
+                        <label for="contact_number">Contact Number</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input class="form-control" placeholder="Enter Address" name="address" id="address" style="background-color: #EEEEEE;">
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid mt-4 gap-2">
+                <button id="submit_student" class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
     </div>
-    <br>
-    </div>
-   <div class="col mx-1"><div class="form-floating">
-        <textarea class="form-control" placeholder="Enter Student Name" id="studentName" style="background-color: #EEEEEE;"></textarea>
-        <label for="studentName">Student Id</label>
-    </div></div></div>
-   
-    <button type="button" class="btn btn-primary" id="saveButton">Save</button>
-</div>
+
+
+                </div>
 
             </div>
             <div class="col-4">
@@ -128,8 +161,29 @@
 
                     </div>
 
+                </div>
 
+                <br>
 
+                <div class="card p-4" style="width: auto;">
+                    <h3>Enroll a Student</h3>
+                    <div class="container d-flex">
+                        <div class="col mx-1">
+                            <div class="form-floating">
+                                <input class="form-control" placeholder="Enter Course ID" id="courseId" style="background-color: #EEEEEE;"></textarea>
+                                <label for="courseId">Course Id</label>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col mx-1">
+                            <div class="form-floating">
+                                <input class="form-control" placeholder="Enter Student Name" id="studentName" style="background-color: #EEEEEE;"></textarea>
+                                <label for="studentName">Student Id</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="saveButton">Save</button>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto mb-5">
                     <a type="button" href="http://rmilaravel.test/" class="mt-3 btn btn-outline-light">Go Back</a>
@@ -138,9 +192,12 @@
             </div>
         </div>
         <br><br><br>
-       
+        <!--  <audio controls autoplay loop class="hidden-audio">
+            <source src="{{ asset('4200.mp3') }}" type="audio/mpeg">
+        </audio> -->
+
         <script src="{{ asset('js/welcome.js') }}"></script>
-        
+
 </body>
 
 </html>

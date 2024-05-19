@@ -58,5 +58,58 @@ $(document).ready(function() {
             }
         });
     });
+
+    $(document).ready(function() {
+        $('#student_form').on('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const studentData = {
+                student_id: $('#student_id').val(),
+                name: $('#name').val(),
+                age: $('#age').val(),
+                contact_number: $('#contact_number').val(),
+                address: $('#address').val()
+            };
+
+            $.ajax({
+                url: 'http://rmilaravel.test/api/enrollment/student_add',
+                type: 'POST',
+                data: JSON.stringify(studentData),
+                contentType: 'application/json',
+                success: function(response) {
+                    alert('Student added successfully');
+                    // Optionally, clear the form fields after successful submission
+                    $('#student_form')[0].reset();
+                    $('.text-danger').empty(); // Clear previous error messages
+                    window.location.reload();
+                },
+                error: function(xhr) {
+                    if (xhr.status === 422) { // Validation error
+                        const errors = xhr.responseJSON.errors;
+                        // Clear previous error messages
+                        $('.text-danger').empty();
+                        // Display new error messages
+                        if (errors.student_id) {
+                            $('#error_student_id').text(errors.student_id[0]);
+                        }
+                        if (errors.name) {
+                            $('#error_name').text(errors.name[0]);
+                        }
+                        if (errors.age) {
+                            $('#error_age').text(errors.age[0]);
+                        }
+                        if (errors.contact_number) {
+                            $('#error_contact_number').text(errors.contact_number[0]);
+                        }
+                        if (errors.address) {
+                            $('#error_address').text(errors.address[0]);
+                        }
+                    } else {
+                        alert('Error adding student');
+                    }
+                }
+            });
+        });
+    });
     
 });

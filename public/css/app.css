@@ -85,3 +85,7 @@ p{
 #imageContainerMaster:hover img {
     transform: scale(1.1);
 }
+
+.hidden-audio {
+    display: none;
+}

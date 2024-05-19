@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
-<body class="antialiased" id="indexbody"style="height: 100vh;
+<body class="antialiased" id="indexbody" style="height: 100vh;
     overflow: hidden;
     position: relative;">
     <div class="custom-shape-divider-top-1715081876">
@@ -38,8 +38,8 @@
                 <a href="http://rmilaravel.test/dashboard" class=" mt-5 mx-5 d-flex justify-content-center btn btn-outline-light">Go to Dashboard</a>
                 <div class="d-flex">
                     <h5 class="ms-5 text-light mt-3">Links:</h5><a href="https://github.com/centmarde" target="blank">
-            
-                    <i class="text-light ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
+
+                        <i class="text-light ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
                     </a>
                     <a href="https://github.com/ccqg" target="blank">
                         <i class="text-dark ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
@@ -47,7 +47,6 @@
                     <a href="https://github.com/Kayel2" target="blank">
                         <i class="text-danger ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
                     </a>
-                   
 
 
                 </div>
@@ -61,6 +60,7 @@
 
         </div>
 
+       
 
 
 
@@ -70,11 +70,11 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-  // Use jQuery to fade in the element with the specified id
-  $(document).ready(function(){
-    $("#title").fadeIn(); // Fade in the element with id "title"
-  });
-</script>
+        // Use jQuery to fade in the element with the specified id
+        $(document).ready(function() {
+            $("#title").fadeIn(); // Fade in the element with id "title"
+        });
+    </script>
 </body>
 
 </html>

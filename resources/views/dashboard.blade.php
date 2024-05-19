@@ -8,6 +8,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Age</th>
                 <th>Address</th>
                 <th>Contact Number</th>
             </tr>
@@ -17,6 +18,7 @@
             <tr>
                 <td>{{ $student->student_id }}</td>
                 <td>{{ $student->name }}</td>
+                <td>{{ $student->age }}</td>
                 <td>{{ $student->address }}</td>
                 <td>{{ $student->contact_number }}</td>
             </tr>
