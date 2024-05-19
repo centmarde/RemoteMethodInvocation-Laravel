@@ -3,9 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EnrollmentController;
-use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\Api\StudentsControllerApi;
-use App\Models\Enrollment;
+use App\Http\Controllers\Api\CourseControllerApi;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::post('/enrollment/store', [EnrollmentController::class, 'store']);
 Route::post('/enrollment/student_add', [StudentsControllerApi::class, 'store']);
 Route::get('/enrollments',[EnrollmentController::class, 'index']);
 Route::delete('/enrollments/{id}',[EnrollmentController::class, 'destroy']);
+Route::post('/courses/course_add', [CourseControllerApi::class, 'store']);

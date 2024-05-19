@@ -57,54 +57,76 @@
                 </div>
 
                 <br>
-                <div class="card p-4" style="width: auto;">
-                    <h3>Add a Student to a XML file.</h3>
-                    <div class="container">
-        <form id="student_form">
-            <div class="mb-3">
                 <div class="row">
                     <div class="col">
-                        <div class="form-floating">
-                            <input class="form-control" placeholder="Enter Student ID" name="student_id" id="student_id" style="background-color: #EEEEEE;">
-                            <label for="student_id">Student Id</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-floating">
-                            <input class="form-control" placeholder="Enter Name" name="name" id="name" style="background-color: #EEEEEE;">
-                            <label for="name">Name</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-floating">
-                        <input class="form-control" placeholder="Enter Age" name="age" id="age" style="background-color: #EEEEEE;">
-                        <label for="age">Age</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-floating">
-                        <input class="form-control" placeholder="Enter Contact Number" name="contact_number" id="contact_number" style="background-color: #EEEEEE;">
-                        <label for="contact_number">Contact Number</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-floating">
-                        <input class="form-control" placeholder="Enter Address" name="address" id="address" style="background-color: #EEEEEE;">
-                        <label for="address">Address</label>
-                    </div>
-                </div>
-            </div>
-            <div class="d-grid mt-4 gap-2">
-                <button id="submit_student" class="btn btn-primary" type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
+                        <div class="card p-4" style="width: auto;">
+                            <h5>Add a Student to XML</h5>
+                            <hr>
+                            <div class="container">
+                                <form id="student_form">
+                                    <div class="mb-1">
+                                        <div class="form-floating">
+                                            <input class="form-control" placeholder="Enter Student ID" name="student_id" id="student_id" style="background-color: #EEEEEE;">
+                                            <label for="student_id">Student Id</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-1">
+                                        <input class="form-control" placeholder="Enter Name" name="name" id="name" style="background-color: #EEEEEE;">
+                                        <label for="name">Name</label>
+                                    </div>
+                                    <div class="form-floating mb-1">
+                                        <input class="form-control" placeholder="Enter Age" name="age" id="age" style="background-color: #EEEEEE;">
+                                        <label for="age">Age</label>
+                                    </div>
+                                    <div class="form-floating mb-1">
+                                        <input class="form-control" placeholder="Enter Contact Number" name="contact_number" id="contact_number" style="background-color: #EEEEEE;">
+                                        <label for="contact_number">Contact Number</label>
+                                    </div>
+                                    <div class="form-floating mb-1">
+                                        <input class="form-control" placeholder="Enter Address" name="address" id="address" style="background-color: #EEEEEE;">
+                                        <label for="address">Address</label>
+                                    </div>
+                                    <div class="d-grid mt-4 gap-2">
+                                        <button id="submit_student" class="btn btn-primary" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
 
 
+
+                        </div>
+                    </div>
+                    <div class="col"> <div class="card p-4" style="width: auto;">
+                            <h5>Add a Course to XML</h5>
+                            <hr>
+                            <div class="container">
+                                <form id="course_form">
+                                    <div class="mb-1">
+                                        <div class="form-floating">
+                                            <input class="form-control" placeholder="Enter Course ID" name="course_id" id="course_id" style="background-color: #EEEEEE;">
+                                            <label for="course_id">Course Id</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-1">
+                                        <input class="form-control" placeholder="Enter title" name="course_title" id="course_title" style="background-color: #EEEEEE;">
+                                        <label for="course_title">Course Title</label>
+                                    </div>
+                                    <div class="form-floating mb-1">
+                                        <input class="form-control" placeholder="Enter Description" name="course_description" id="course_description" style="background-color: #EEEEEE;">
+                                        <label for="course_description">Description</label>
+                                    </div>
+                                   
+                                    <div class="d-grid mt-4 gap-2">
+                                        <button id="submit_course" class="btn btn-primary" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div></div>
                 </div>
+
 
             </div>
             <div class="col-4">

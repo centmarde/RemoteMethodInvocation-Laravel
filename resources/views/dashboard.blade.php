@@ -11,6 +11,7 @@
                 <th>Age</th>
                 <th>Address</th>
                 <th>Contact Number</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,9 @@
                 <td>{{ $student->age }}</td>
                 <td>{{ $student->address }}</td>
                 <td>{{ $student->contact_number }}</td>
+                <td>
+        <button type="button" class="btn btn-danger remove-button" data-enrollment-id="{{ $student->id }}">Remove</button>
+    </td>
             </tr>
             @endforeach
         </tbody>
@@ -37,6 +41,7 @@
                 <th>Course Id</th>
                 <th>Course Title</th>
                 <th>Course Description</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -45,6 +50,9 @@
                 <td>{{ $course->course_id }}</td>
                 <td>{{ $course->course_title }}</td>
                 <td>{{ $course->course_description }}</td>
+                <td>
+        <button type="button" class="btn btn-danger remove-button" data-enrollment-id="{{ $course->id }}">Remove</button>
+    </td>
             </tr>
             @endforeach
         </tbody>
