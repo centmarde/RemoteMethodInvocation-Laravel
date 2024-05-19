@@ -199,7 +199,7 @@
                         </div>
                         <div class="col mx-1">
                             <div class="form-floating">
-                                <input class="form-control" placeholder="Enter Student Name" id="studentName" style="background-color: #EEEEEE;"></textarea>
+                                <input class="form-control" placeholder="Enter Student ID" id="studentId" style="background-color: #EEEEEE;"></textarea>
                                 <label for="studentName">Student Id</label>
                             </div>
                         </div>
@@ -208,17 +208,21 @@
                     <button type="button" class="btn btn-primary" id="saveButton">Save</button>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto mb-5">
-                    <a type="button" href="http://rmilaravel.test/" class="mt-3 btn btn-outline-light">Go Back</a>
+                    
+                    <a type="button" id="delete-all-courses-button"  class="mt-3 btn btn-danger">Delete Contens of Courses XML</a>
+                    <a type="button"  class="mt-3 btn btn-danger">Delete Contens of Students XML</a>
+                    <a type="button" href="http://rmilaravel.test/" class="mt-3 btn btn-light">Go to Splash Screen</a>
                 </div>
 
             </div>
         </div>
         <br><br><br>
-        <!--  <audio controls autoplay loop class="hidden-audio">
+         <!--  <audio controls autoplay loop class="hidden-audio">
             <source src="{{ asset('4200.mp3') }}" type="audio/mpeg">
-        </audio> -->
+        </audio>  -->
 
-        <script src="{{ asset('js/welcome.js') }}"></script>
+        <script src="{{ asset('js/welcome.js') }}?v={{ time() }}"></script>
+
 
 </body>
 

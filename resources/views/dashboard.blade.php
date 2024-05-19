@@ -23,7 +23,7 @@
                 <td>{{ $student->address }}</td>
                 <td>{{ $student->contact_number }}</td>
                 <td>
-        <button type="button" class="btn btn-danger remove-button" data-enrollment-id="{{ $student->id }}">Remove</button>
+        <button type="button" class="btn btn-danger remove-button-student" data-student-id="{{ $student->student_id }}">Remove</button>
     </td>
             </tr>
             @endforeach
@@ -51,7 +51,7 @@
                 <td>{{ $course->course_title }}</td>
                 <td>{{ $course->course_description }}</td>
                 <td>
-        <button type="button" class="btn btn-danger remove-button" data-enrollment-id="{{ $course->id }}">Remove</button>
+        <button type="button" class="btn btn-danger remove-button-course" data-course-id="{{ $course->course_id }}">Remove</button>
     </td>
             </tr>
             @endforeach
@@ -81,7 +81,7 @@
     <td>{{ $enrollment->student->name }}</td>
     <td>{{ $enrollment->course->course_title }}</td>
     <td>
-        <button type="button" class="btn btn-danger remove-button" data-enrollment-id="{{ $enrollment->id }}">Remove</button>
+        <button type="button" class="btn btn-danger  remove-button" data-enrollment-id="{{ $enrollment->id }}">Remove</button>
     </td>
 </tr>
 @endforeach

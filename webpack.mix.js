@@ -1,3 +1,4 @@
 let mix = require('laravel-mix');
 
-mix.js('public/js/app.js', 'dist').setPublicPath('dist');
+mix.js('resources/js/welcome.js', 'public/js')
+   .version();

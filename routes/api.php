@@ -27,4 +27,10 @@ Route::post('/enrollment/store', [EnrollmentController::class, 'store']);
 Route::post('/enrollment/student_add', [StudentsControllerApi::class, 'store']);
 Route::get('/enrollments',[EnrollmentController::class, 'index']);
 Route::delete('/enrollments/{id}',[EnrollmentController::class, 'destroy']);
+
+
 Route::post('/courses/course_add', [CourseControllerApi::class, 'store']);
+Route::delete('/courses/{id}',[CourseControllerApi::class, 'destroy']);
+Route::delete('/courses_delete', [CourseControllerApi::class, 'deleteAllCourses']);
+
+
