@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Students;
 use SimpleXMLElement;
+use Illuminate\Support\Facades\Log;
+
 
 class StudentsControllerApi extends Controller
 {
@@ -51,4 +53,54 @@ class StudentsControllerApi extends Controller
             'student' => $student,
         ], 201);
     }
+
+    public function destroy(string $id)
+    {
+       $student = Students::findOrFail($id);
+       $student->delete();
+       return $student;
+    }
+
+
+    public function deleteAllStudents(Request $request)
+{
+    // Path to the Students.xml file
+    $path = storage_path('Students.xml');
+
+    // Check if the file exists
+    if (!file_exists($path)) {
+        return response()->json(['error' => 'Students.xml file not found.'], 404);
+    }
+
+    try {
+        // Load the XML file
+        $xml = simplexml_load_file($path);
+        if ($xml === false) {
+            return response()->json(['error' => 'Failed to load Students.xml file.'], 500);
+        }
+
+        // Remove all student entries
+        $students = $xml->xpath('/Students/Student');
+        if ($students === false) {
+            return response()->json(['error' => 'Failed to parse Students.xml file.'], 500);
+        }
+
+        foreach ($students as $student) {
+            unset($student[0]);
+        }
+
+        // Save the changes back to the XML file
+        if ($xml->asXML($path) === false) {
+            return response()->json(['error' => 'Failed to save changes to Students.xml file.'], 500);
+        }
+
+        return response()->json(['message' => 'All students have been deleted successfully.'], 200);
+    } catch (\Exception $e) {
+        // Log the exception for debugging purposes
+        Log::error($e->getMessage());
+
+        return response()->json(['error' => 'An unexpected error occurred while deleting students. Please try again later.'], 500);
+    }
+}
+
 }

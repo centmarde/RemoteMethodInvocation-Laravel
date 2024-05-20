@@ -210,7 +210,7 @@
                 <div class="d-grid gap-2 col-12 mx-auto mb-5">
                     
                     <a type="button" id="delete-all-courses-button"  class="mt-3 btn btn-danger">Delete Contens of Courses XML</a>
-                    <a type="button"  class="mt-3 btn btn-danger">Delete Contens of Students XML</a>
+                    <a type="button" id="delete-all-students-button"  class="mt-3 btn btn-danger">Delete Contens of Students XML</a>
                     <a type="button" href="http://rmilaravel.test/" class="mt-3 btn btn-light">Go to Splash Screen</a>
                 </div>
 

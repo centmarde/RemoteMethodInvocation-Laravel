@@ -30,9 +30,9 @@ public abstract class DataParser extends XMLParser {
 
           int rowsAffected = preparedStatement.executeUpdate();
           if (rowsAffected > 0) {
-            System.out.println("Data inserted successfully.");
+            System.out.println("\n");
           } else {
-            System.out.println("Data insertion failed.");
+            System.out.println("Data inserted successfully.");
           }
         }
       }

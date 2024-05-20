@@ -75,6 +75,25 @@ $(document).ready(function() {
         }
     });
 
+    $('#delete-all-students-button').click(function() {
+        var confirmDelete = confirm("Are you sure you want to delete all students?");
+
+        if (confirmDelete) {
+            $.ajax({
+                url: 'http://rmilaravel.test/api/student_delete',
+                method: 'DELETE',
+                success: function(response) {
+                    alert(response.message);
+                   
+                    window.location.reload();
+                },
+                error: function(xhr, status, error) {
+                    alert('Error: ' + xhr.responseJSON.error);
+                }
+            });
+        }
+    });
+
     // Handle individual course removal
     $('.remove-button-course').click(function() {
         var button = $(this);
@@ -85,6 +104,36 @@ $(document).ready(function() {
         if (confirmDelete) {
             $.ajax({
                 url: 'http://rmilaravel.test/api/courses/' + courseId,
+                method: 'DELETE',
+                contentType: 'application/json',
+                success: function(response) {
+                    if (response.ok) {
+                        button.closest('tr').remove();
+                       
+                    } else {
+                        console.error('Error:', response.statusText);
+                    }
+                    alert("deleted successfully");
+                    window.location.reload();
+                   
+                },
+                error: function(xhr, status, error) {
+                    alert('Error:', error);
+                }
+            });
+          
+        }
+    });
+
+    $('.remove-button-student').click(function() {
+        var button = $(this);
+        var studentId = button.data('student-id');
+
+        var confirmDelete = confirm("Are you sure you want to delete this Student?");
+
+        if (confirmDelete) {
+            $.ajax({
+                url: 'http://rmilaravel.test/api/students/' + studentId,
                 method: 'DELETE',
                 contentType: 'application/json',
                 success: function(response) {

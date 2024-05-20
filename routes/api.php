@@ -5,8 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EnrollmentController;
 use App\Http\Controllers\Api\StudentsControllerApi;
 use App\Http\Controllers\Api\CourseControllerApi;
-
-
+use App\Http\Controllers\StudentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +31,9 @@ Route::delete('/enrollments/{id}',[EnrollmentController::class, 'destroy']);
 Route::post('/courses/course_add', [CourseControllerApi::class, 'store']);
 Route::delete('/courses/{id}',[CourseControllerApi::class, 'destroy']);
 Route::delete('/courses_delete', [CourseControllerApi::class, 'deleteAllCourses']);
+
+Route::delete('/students/{id}',[StudentsControllerApi::class, 'destroy']);
+Route::delete('/student_delete', [StudentsControllerApi::class, 'deleteAllStudents']);
+
 
 

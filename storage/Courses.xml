@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <Courses>
    
-    <Course course_id="ITE200" course_title="JAVAC RICE" course_description="TEST"/></Courses>
+    <Course course_id="ITE200" course_title="JAVAC RICE" course_description="TEST"/><Course course_id="ITE16" course_title="rmi" course_description="asdasdasd"/></Courses>
