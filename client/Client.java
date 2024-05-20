@@ -6,45 +6,37 @@ import java.sql.DriverManager;
 public class Client {
 
     public static void main(String[] args) {
-        String dbUrl = "jdbc:mysql://localhost:3306/rmilaravel";
+        String url = "jdbc:mysql://localhost:3306/rmilaravel";
         String username = "root";
         String password = "";
 
         try {
-            // Database connection
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(dbUrl, username, password);
+            Connection connection = DriverManager.getConnection(url, username, password);
 
-            // Verify database connection before proceeding
-            if (connection != null && !connection.isClosed()) {
-                System.out.println("Connected to the database.");
+            Registry registry = LocateRegistry.getRegistry("localhost", 9101);
+            StudentInterface studentRemoteObject = (StudentInterface) registry.lookup("StudentRMIInterface");
+            studentRemoteObject.displayInfo();
 
-                // Parse and insert students
-                StudentParser studentParser = new StudentParser();
-                studentParser.parseAndInsertStudents(connection, "C:/laragon/www/RMILaravel/Storage/Students.xml");
+            CourseInterface courseRemoteObject = (CourseInterface) registry.lookup("CourseRMIInterface");
+            courseRemoteObject.displayCourse();
 
-                // Parse and insert courses
-                CourseParser courseParser = new CourseParser();
-                courseParser.parseAndInsertCourses(connection, "C:/laragon/www/RMILaravel/Storage/Courses.xml");
+            System.out.println("Connected to the database.");
 
-                connection.close();
-            } else {
-                System.out.println("Failed to connect to the database.");
-                return; // Exit the program if database connection fails
-            }
+            // Parse and insert students
+            System.out.println("Parsing and inserting students...");
+            StudentParser studentParser = new StudentParser();
+            studentParser.parseAndInsertStudents(connection, "C:/laragon/www/RMIlaravel/storage/Students.xml");
 
-            // RMI Client setup
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
-            RMIInterface rmiStub = (RMIInterface) registry.lookup("RMIInterface");
+            // Parse and insert courses
+            System.out.println("Parsing and inserting courses...");
+            CourseParser courseParser = new CourseParser();
+            courseParser.parseAndInsertCourses(connection, "C:/laragon/www/RMIlaravel/storage/Courses.xml");
 
-            // Fetch and display student information using RMI
-            Student student = rmiStub.getStudentInfo("1");
-            if (student != null) {
-              student.displayInfo();
-          } else {
-              System.out.println("Client is Running...");
-          }
+            System.out.println("Data insertion completed.");
 
+            connection.close();
+            System.out.println("Connection closed.");
         } catch (Exception e) {
             e.printStackTrace();
         }
