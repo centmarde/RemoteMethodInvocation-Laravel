@@ -46,4 +46,5 @@ public class Student extends UnicastRemoteObject implements StudentInterface {
     public String getContactNumber() throws RemoteException {
         return contactNumber;
     }
+    
 }

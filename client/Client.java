@@ -21,6 +21,9 @@ public class Client {
             CourseInterface courseRemoteObject = (CourseInterface) registry.lookup("CourseRMIInterface");
             courseRemoteObject.displayCourse();
 
+            NotificationInterface notification = (NotificationInterface) registry.lookup("NotificationInterface");
+            notification.notify("Data inserted into XML file.");
+
             System.out.println("Connected to the database.");
 
             // Parse and insert students

@@ -31,4 +31,5 @@ public class Course extends UnicastRemoteObject implements CourseInterface {
     public String getDescription() throws RemoteException {
         return courseDescription;
     }
+    
 }
