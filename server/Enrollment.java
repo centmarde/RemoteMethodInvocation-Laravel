@@ -1,42 +1,20 @@
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Enrollment extends UnicastRemoteObject implements EnrollmentInterface {
+public class Enrollment extends EnrollmentOperations implements EnrollmentInterface {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/rmilaravel";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
-
-    private String id;
-    private String courseId;
-    private String studentId;
     private static Map<String, Enrollment> enrollments = new HashMap<>();
-
-    static {
-        try {
-            // Load the MySQL JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new ExceptionInInitializerError("Failed to load MySQL driver");
-        }
-    }
 
     protected Enrollment() throws RemoteException {
         super();
     }
 
     public Enrollment(String id, String courseId, String studentId) throws RemoteException {
-        super();
-        this.id = id;
-        this.courseId = courseId;
-        this.studentId = studentId;
+        super(id, courseId, studentId);
     }
 
     @Override
@@ -47,23 +25,8 @@ public class Enrollment extends UnicastRemoteObject implements EnrollmentInterfa
     }
 
     @Override
-    public String getId() throws RemoteException {
-        return id;
-    }
-
-    @Override
-    public String getCourseId() throws RemoteException {
-        return courseId;
-    }
-
-    @Override
-    public String getStudentId() throws RemoteException {
-        return studentId;
-    }
-
-    @Override
     public synchronized String addEnrollment(String id, String courseId, String studentId) throws RemoteException {
-        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
+        try (Connection connection = getConnection()) {
             String insertQuery = "INSERT INTO enrollment (id, course_id, student_id) VALUES (?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                 preparedStatement.setString(1, id);
