@@ -35,7 +35,7 @@
                 <br><br><br><br><br><br><br><br><br>
                 <h1 class="text-center" id="title">Remote Method Invocation</h1>
 
-                <a href="http://rmilaravel.test/dashboard" class=" mt-5 mx-5 d-flex justify-content-center btn btn-outline-light">Go to Dashboard</a>
+                <a href="{{ url('/dashboard') }}" class=" mt-5 mx-5 d-flex justify-content-center btn btn-outline-light">Go to Dashboard</a>
                 <div class="d-flex">
                     <h5 class="ms-5 text-light mt-3">Links:</h5><a href="https://github.com/centmarde" target="blank">
 

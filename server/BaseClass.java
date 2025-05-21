@@ -7,17 +7,17 @@ public class BaseClass implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    protected static final String URL = "jdbc:mysql://localhost:3306/rmilaravel";
-    protected static final String USERNAME = "root";
-    protected static final String PASSWORD = "";
+    private static final String URL = "jdbc:postgresql://127.0.0.1:5432/RMI";
+    private static final String USERNAME = "postgres";
+    private static final String PASSWORD = "admin";
 
     static {
         try {
-            // Load the MySQL JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Load the PostgreSQL JDBC driver
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            throw new ExceptionInInitializerError("Failed to load MySQL driver");
+            throw new ExceptionInInitializerError("Failed to load PostgreSQL driver");
         }
     }
 

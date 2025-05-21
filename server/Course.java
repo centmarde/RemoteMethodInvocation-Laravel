@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class Course extends UnicastRemoteObject implements CourseInterface {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/rmilaravel";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
+    private static final String URL = "jdbc:postgresql://127.0.0.1:5432/RMI";
+    private static final String USERNAME = "postgres";
+    private static final String PASSWORD = "admin";
 
     private String courseId;
     private String courseTitle;
@@ -20,11 +20,11 @@ public class Course extends UnicastRemoteObject implements CourseInterface {
 
     static {
         try {
-            // Load the MySQL JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Load the PostgreSQL JDBC driver
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            throw new ExceptionInInitializerError("Failed to load MySQL driver");
+            throw new ExceptionInInitializerError("Failed to load PostgreSQL driver");
         }
     }
 

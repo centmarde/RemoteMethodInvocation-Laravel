@@ -26,40 +26,39 @@
         <div class="container">
             <div class="navbar-brand">
                 <h1 class="text-center" id="header">Students Dashboard.</h1>
-
             </div>
         </div>
     </nav>
     <br> <br> <br>
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8 col-lg-9">
                 <div class="card" style="width: auto;">
-
                     <div class="card-body">
                         @yield('content')
                     </div>
                 </div>
-                <div class="card mt-3" style="width: auto;">
-
-                    <div class="card-body">
-                        @yield('content2')
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card" style="width: auto;">
+                            <div class="card-body">
+                                @yield('content2')
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card" style="width: auto;">
+                            <div class="card-body">
+                                @yield('content3')
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card mt-3" style="width: auto;">
-
-                    <div class="card-body">
-                        @yield('content3' )
-
-                    </div>
-
-                </div>
-
-                <br>
-                <div class="row">
-                    <div class="col">
-                        <div class="card p-4" style="width: auto;">
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card p-4" style="width: auto; height: 100%;">
                             <h5>Add a Student to XML</h5>
                             <hr>
                             <div class="container">
@@ -91,12 +90,10 @@
                                     </div>
                                 </form>
                             </div>
-
-
-
                         </div>
                     </div>
-                    <div class="col"> <div class="card p-4" style="width: auto;">
+                    <div class="col-md-6">
+                        <div class="card p-4" style="width: auto; height: 100%;">
                             <h5>Add a Course to XML</h5>
                             <hr>
                             <div class="container">
@@ -115,115 +112,78 @@
                                         <input class="form-control" placeholder="Enter Description" name="course_description" id="course_description" style="background-color: #EEEEEE;">
                                         <label for="course_description">Description</label>
                                     </div>
-                                   
                                     <div class="d-grid mt-4 gap-2">
                                         <button id="submit_course" class="btn btn-primary" type="submit">Submit</button>
                                     </div>
                                 </form>
                             </div>
-
-
-
-                        </div></div>
+                        </div>
+                    </div>
                 </div>
-
-
+                
+                <div class="card mt-3 p-4" style="width: auto;">
+                    <h3>Enroll a Student</h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-floating">
+                                    <input class="form-control" placeholder="Enter Course ID" id="courseId" style="background-color: #EEEEEE;">
+                                    <label for="courseId">Course Id</label>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-floating">
+                                    <input class="form-control" placeholder="Enter Student ID" id="studentId" style="background-color: #EEEEEE;">
+                                    <label for="studentName">Student Id</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-center justify-content-center mt-2 mt-md-0">
+                                <button type="button" class="btn btn-primary w-100" id="saveButton">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4">
+            
+            <div class="col-md-4 col-lg-3">
                 <div class="card" style="width: auto;">
                     <div class="card-body">
-                        <div class="d-flex justify-content-center">
-
-                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainerMaster">
-                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('marde.jpg') }}" width="100%" height="200rem"></div>
-
-                            </div>
-
-                        </div>
-                        <h4 class="text-center">Centmarde J. Campado</h4>
+                        <h4 class="text-center mb-3">System Information</h4>
+                        <p class="text-center">Student and Course Management System</p>
+                        <p class="text-center"><small>v1.0.0</small></p>
                     </div>
                 </div>
 
                 <div class="card mt-3" style="width: auto;">
                     <div class="card-body">
-                        <div class="d-flex justify-content-center">
-
-                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
-                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('christ.jpg') }}" width="100%" height="200rem"></div>
-
-                            </div>
-
-                        </div>
-                        <h4 class="text-center">Christ Gabales</h4>
+                        <h4 class="text-center">Project Overview</h4>
+                        <p class="text-center">Remote Method Invocation implementation using Laravel and JDBC.</p>
                     </div>
                 </div>
 
-                <div class="card mt-3" style="width: auto;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center">
-
-                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
-                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('junkay.jpeg') }}" width="100%" height="200rem"></div>
-
-                            </div>
-
-                        </div>
-                        <h4 class="text-center">Jun Kyle Gulay</h4>
-                    </div>
-                </div>
                 <div class="card mt-3" style="width: auto;">
                     <div class="card-body">
                         <div class="row mb-2">
-                            <h5 class="text-center mb-3">technology used</h5>
-                            <div class="col text-center"><img src="{{ asset('jdbc.jpg') }}" width="100%" height="70rem"></div>
-                            <div class="col text-center"><img src="{{ asset('laravel.png') }}" width="100%" height="70rem"></div>
-                            <div class="col text-center"><img src="{{ asset('PHP-logo.svg.png') }}" width="100%" height="50rem"></div>
-                            <div class="col text-center"><img src="{{ asset('mysql-6.svg') }}" width="100%" height="70rem"></div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <br>
-
-                <div class="card p-4" style="width: auto;">
-                    <h3>Enroll a Student</h3>
-                    <div class="container d-flex">
-                        <div class="col mx-1">
-                            <div class="form-floating">
-                                <input class="form-control" placeholder="Enter Course ID" id="courseId" style="background-color: #EEEEEE;"></textarea>
-                                <label for="courseId">Course Id</label>
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col mx-1">
-                            <div class="form-floating">
-                                <input class="form-control" placeholder="Enter Student ID" id="studentId" style="background-color: #EEEEEE;"></textarea>
-                                <label for="studentName">Student Id</label>
-                            </div>
+                            <h5 class="text-center mb-3">Technologies Used</h5>
+                            <div class="col-3 col-md-6 text-center mb-2"><img src="{{ asset('jdbc.jpg') }}" width="100%" height="70rem" alt="JDBC"></div>
+                            <div class="col-3 col-md-6 text-center mb-2"><img src="{{ asset('laravel.png') }}" width="100%" height="70rem" alt="Laravel"></div>
+                            <div class="col-3 col-md-6 text-center"><img src="{{ asset('PHP-logo.svg.png') }}" width="100%" height="50rem" alt="PHP"></div>
+                            <div class="col-3 col-md-6 text-center"><img src="{{ asset('mysql-6.svg') }}" width="100%" height="70rem" alt="MySQL"></div>
                         </div>
                     </div>
-
-                    <button type="button" class="btn btn-primary" id="saveButton">Save</button>
-                </div>
-                <div class="d-grid gap-2 col-12 mx-auto mb-5">
-                    
-                    <a type="button" id="delete-all-courses-button"  class="mt-3 btn btn-danger">Delete Contens of Courses XML</a>
-                    <a type="button" id="delete-all-students-button"  class="mt-3 btn btn-danger">Delete Contens of Students XML</a>
-                    <a type="button" href="http://rmilaravel.test/" class="mt-3 btn btn-light">Go to Splash Screen</a>
                 </div>
 
+                <div class="d-grid gap-2 col-12 mx-auto mt-3 mb-5">
+                    <a type="button" id="delete-all-courses-button" class="btn btn-danger">Delete Contents of Courses XML</a>
+                    <a type="button" id="delete-all-students-button" class="btn btn-danger">Delete Contents of Students XML</a>
+                    <a type="button" href="{{ url('/') }}" class="mt-2 btn btn-light">Go to Splash Screen</a>
+                </div>
             </div>
         </div>
         <br><br><br>
-        <!--   <audio controls autoplay loop class="hidden-audio">
-            <source src="{{ asset('4200.mp3') }}" type="audio/mpeg">
-        </audio>  -->
 
         <script src="{{ asset('js/welcome.js') }}?v={{ time() }}"></script>
-
-
+    </div>
 </body>
 
 </html>

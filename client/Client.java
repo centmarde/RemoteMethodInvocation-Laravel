@@ -122,7 +122,7 @@ public class Client {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse("C:/laragon/www/RMIlaravel/storage/Students.xml");
+            Document document = builder.parse("C:/Users/Admin/Documents/GitHub/RemoteMethodInvocation-Laravel/storage/Students.xml");
 
             NodeList studentList = document.getElementsByTagName("Student");
             for (int i = 0; i < studentList.getLength(); i++) {
@@ -143,7 +143,7 @@ public class Client {
    private static void registerStudentsForCoursesFromXML(EnrollmentInterface remoteObject) {
     try {
         // Load the XML file
-        File file = new File("C:/laragon/www/RMIlaravel/storage/Enrollment.xml");
+        File file = new File("C:/Users/Admin/Documents/GitHub/RemoteMethodInvocation-Laravel/storage/Enrollment.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(file);
@@ -171,7 +171,7 @@ public class Client {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse("C:/laragon/www/RMIlaravel/storage/Courses.xml");
+            Document document = builder.parse("C:/Users/Admin/Documents/GitHub/RemoteMethodInvocation-Laravel/storage/Courses.xml");
     
             NodeList courseList = document.getElementsByTagName("Course");
             for (int i = 0; i < courseList.getLength(); i++) {

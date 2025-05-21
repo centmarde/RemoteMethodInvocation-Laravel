@@ -6,7 +6,7 @@ $(document).ready(function() {
             var studentId = $('#studentId').val();
     
             $.ajax({
-                url: 'http://rmilaravel.test/api/enrollment/store',
+                url: 'https://remotemethodinvocation-laravel.test/api/enrollment/store',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
         if (confirmDelete) {
             $.ajax({
-                url: 'http://rmilaravel.test/api/enrollments/' + enrollmentId,
+                url: 'https://remotemethodinvocation-laravel.test/api/enrollments/' + enrollmentId,
                 method: 'DELETE',
                 contentType: 'application/json',
                 success: function(response) {
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
         if (confirmDelete) {
             $.ajax({
-                url: 'http://rmilaravel.test/api/courses_delete',
+                url: 'https://remotemethodinvocation-laravel.test/api/courses_delete',
                 method: 'DELETE',
                 success: function(response) {
                     alert(response.message);
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
         if (confirmDelete) {
             $.ajax({
-                url: 'http://rmilaravel.test/api/student_delete',
+                url: 'https://remotemethodinvocation-laravel.test/api/student_delete',
                 method: 'DELETE',
                 success: function(response) {
                     alert(response.message);
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
         if (confirmDelete) {
             $.ajax({
-                url: 'http://rmilaravel.test/api/courses/' + courseId,
+                url: 'https://remotemethodinvocation-laravel.test/api/courses/' + courseId,
                 method: 'DELETE',
                 contentType: 'application/json',
                 success: function(response) {
@@ -133,7 +133,7 @@ $(document).ready(function() {
 
         if (confirmDelete) {
             $.ajax({
-                url: 'http://rmilaravel.test/api/students/' + studentId,
+                url: 'https://remotemethodinvocation-laravel.test/api/students/' + studentId,
                 method: 'DELETE',
                 contentType: 'application/json',
                 success: function(response) {
@@ -168,7 +168,7 @@ $(document).ready(function() {
         };
 
         $.ajax({
-            url: 'http://rmilaravel.test/api/enrollment/student_add',
+            url: 'https://remotemethodinvocation-laravel.test/api/enrollment/student_add',
             type: 'POST',
             data: JSON.stringify(studentData),
             contentType: 'application/json',
@@ -215,7 +215,7 @@ $(document).ready(function() {
         };
 
         $.ajax({
-            url: 'http://rmilaravel.test/api/courses/course_add',
+            url: 'https://remotemethodinvocation-laravel.test/api/courses/course_add',
             type: 'POST',
             data: JSON.stringify(courseData),
             contentType: 'application/json',

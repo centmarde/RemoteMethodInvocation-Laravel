@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class Student extends UnicastRemoteObject implements StudentInterface {
-    private static final String URL = "jdbc:mysql://localhost:3306/rmilaravel";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
+    private static final String URL = "jdbc:postgresql://127.0.0.1:5432/RMI";
+    private static final String USERNAME = "postgres";
+    private static final String PASSWORD = "admin";
 
     protected Student() throws RemoteException {
         super();

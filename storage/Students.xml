@@ -2,7 +2,6 @@
 <Students>
 
 
-    <Student student_id="564-59856" name="Marde" age="23" contact_number="234234234"
-        address="asdasdasdasdasd" />
+    <Student student_id="564-59856" name="Marde" age="23" contact_number="234234234" address="asdasdasdasdasd"/>
     
-</Students>
+<Student student_id="222-1213" name="asdasd" age="22" contact_number="09123123" address="andaya"/></Students>
