@@ -23,9 +23,9 @@
     overflow: hidden;
     position: relative;">
     <div class="custom-shape-divider-top-1715081876">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+       <!--  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-        </svg>
+        </svg> -->
     </div>
 
     <div class="container">
@@ -36,26 +36,20 @@
                 <h1 class="text-center" id="title">Remote Method Invocation</h1>
 
                 <a href="{{ url('/dashboard') }}" class=" mt-5 mx-5 d-flex justify-content-center btn btn-outline-light">Go to Dashboard</a>
-                <div class="d-flex">
-                    <h5 class="ms-5 text-light mt-3">Links:</h5><a href="https://github.com/centmarde" target="blank">
-
-                        <i class="text-light ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://github.com/ccqg" target="blank">
-                        <i class="text-dark ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://github.com/Kayel2" target="blank">
-                        <i class="text-danger ms-2 mt-2 fa fa-github fa-2x" aria-hidden="true"></i>
-                    </a>
-
-
-                </div>
+              
 
             </div>
 
             <div class="col-4">
                 <br><br><br> <br>
-                <dotlottie-player id="svg" src="https://lottie.host/670eed5d-c55d-4137-a607-7110b5bae81b/60FiKmroDV.json" background="transparent" speed="0.8" style="width: 700px;" loop autoplay></dotlottie-player>
+              <dotlottie-player
+  src="https://lottie.host/ab597091-b05c-4d37-84b9-874211e54cdb/qKK06fEQQ7.lottie"
+  background="transparent"
+  speed="1"
+
+  loop
+  autoplay
+></dotlottie-player>
             </div>
 
         </div>
